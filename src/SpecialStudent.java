@@ -1,19 +1,19 @@
 /**
  * Created by Андрей on 14.02.2017.
  */
-public class SuperStudent extends CollegeStudent{
+public class SpecialStudent extends CollegeStudent{
 
     private long secretKey;
     private String email;
-            SuperStudent(String firstName, String lastName, int group) {
+    SpecialStudent(String firstName, String lastName, int group) {
         super(firstName, lastName, group);
     }
 
-    SuperStudent(String lastName, Course[] coursesTaken) {
+    SpecialStudent(String lastName, Course[] coursesTaken) {
         super(lastName, coursesTaken);
     }
 
-    SuperStudent(String lastName, Course[] coursesTaken,long secretKey) {
+    SpecialStudent(String lastName, Course[] coursesTaken, long secretKey) {
         super(lastName, coursesTaken);
         this.secretKey =secretKey;
     }
