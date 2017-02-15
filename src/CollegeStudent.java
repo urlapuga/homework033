@@ -10,11 +10,14 @@ public class CollegeStudent extends Student {
         super(firstName, lastName, group);
     }
     CollegeStudent(String lastName,Course[] coursesTaken){super(lastName,  coursesTaken);}
-    CollegeStudent(String firstName, String lastName,int rating, long id){
+    CollegeStudent(String firstName, String lastName,int group , int rating, long id,String collegeName,Course[] coursesTaken,int age){
         super(firstName, lastName,1);
-        this.collegeName=collegeName;
+        super.setCoursesTaken(coursesTaken);
+        super.setAge(age);
+
         this.rating = rating;
         this.id = id;
+        this.collegeName=collegeName;
     }
 
     public void setCollegeName(String collegeName) {
