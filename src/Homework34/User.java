@@ -43,7 +43,7 @@ public class User {
         if(withdrawAmount>=1000)percent+=5;
         int totalBalance = this.balance - withdrawAmount - withdrawAmount*percent/100;
         if(totalBalance>=0){
-            this.balance =this.balance  - withdrawAmount - withdrawAmount*percent/100;
+            this.balance = totalBalance;
             System.out.println("Success");
         }
         else System.out.println("Not Enough Money");
