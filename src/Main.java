@@ -42,7 +42,7 @@ public class Main {
 
         sStudents[1] = new SpecialStudent("SpecialSurname",courses);
         sStudents[2] = new SpecialStudent("Specialurname",courses);
-        sStudents[3] = new SpecialStudent("Specialurname",courses,12);
+        sStudents[3] = new SpecialStudent(12);
 
         System.out.println(courses[1].getName());
     }
