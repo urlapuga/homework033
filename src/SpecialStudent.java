@@ -13,8 +13,8 @@ public class SpecialStudent extends CollegeStudent{
         super(lastName, coursesTaken);
     }
 
-    SpecialStudent(String lastName, Course[] coursesTaken, long secretKey) {
-        super(lastName, coursesTaken);
+    SpecialStudent(long secretKey) {
+        super("default", new Course[0]);
         this.secretKey =secretKey;
     }
 
