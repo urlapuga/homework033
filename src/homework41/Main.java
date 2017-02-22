@@ -19,6 +19,6 @@ public class Main {
         User user5 = new User("userName5", 10000, 1, "company1", 10,chbank);
         User user6 = new User("userName6", 10000, 1, "company1", 10,chbank);
 
-    });
     }
+
 }
