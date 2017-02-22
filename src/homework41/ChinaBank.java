@@ -11,20 +11,20 @@ package homework41;
  */
 public class ChinaBank extends Bank {
 
-    private static final int withdrawLimitUSD = 1000;
-    private static final int withdrawLimitEUR = 1200;
+    private static final int withdrawLimitUSD = 100;
+    private static final int withdrawLimitEUR = 150;
 
-    private static final int limitOfFundingUSD = 0;
+    private static final int limitOfFundingUSD = 5000;
     private static final int limitOfFundingEUR = 10000;
 
     private static final int monthlyRateUSD = 1;
-    private static final int monthlyRateEUR = 2;
+    private static final int monthlyRateEUR = 0;
 
-    private static final int commisionUSDLess = 5;
-    private static final int commisionUSDMore = 7;
+    private static final int commisionUSDLess = 3;
+    private static final int commisionUSDMore = 5;
 
-    private static final int commisionEURLess = 6;
-    private static final int commisionEURMore = 8;
+    private static final int commisionEURLess = 10;
+    private static final int commisionEURMore = 11;
 
     public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
