@@ -1,5 +1,7 @@
 package homework41;
 
+import java.util.Arrays;
+
 /**
  * Created by Андрей on 22.02.2017.
  */
@@ -11,12 +13,12 @@ public class Main {
     public static void main(String[] args) {
 
 
-        USBank usbank = new USBank("US", Currency.USD, 1, 5, 1, 100000);
-        EUBank eubank = new EUBank("EU", Currency.EUR, 1, 5, 1, 100000);
-        ChinaBank chbank = new ChinaBank("CH", Currency.EUR, 1, 5, 1, 100000);
+        Bank usbank = new USBank("US", Currency.USD, 1, 5, 1, 100000);
+        Bank eubank = new EUBank("EU", Currency.EUR, 1, 5, 1, 100000);
+        Bank chbank = new ChinaBank("CH", Currency.EUR, 1, 5, 1, 100000);
 
 
-        users[1] = new User("userName1", 10000, 1, "company1", 10, usbank);
+        users[1] = new User("userName1", 10000, 1, "company1", 10, (Bank)usbank);
         users[2] = new User("userName2", 10000, 1, "company1", 10, usbank);
 
         users[3] = new User("userName3", 10000, 1, "company1", 10, eubank);
@@ -37,6 +39,7 @@ public class Main {
     }
 
     static void paySalaries() {
+        Arrays.stream(users);
         for (User user : users) {
             bankSystem.paySalary(user);
             System.out.println(user.getBalance());

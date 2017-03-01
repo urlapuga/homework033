@@ -37,8 +37,8 @@ abstract class Bank {
 
 
 
-    public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
-        this.id = id;
+    public Bank(String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        this.id = 1;
         this.bankCountry = bankCountry;
         this.currency = currency;
         this.numberOfEmployees = numberOfEmployees;

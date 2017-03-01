@@ -26,8 +26,8 @@ public class ChinaBank extends Bank {
     private static final int commisionEURLess = 10;
     private static final int commisionEURMore = 11;
 
-    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
-        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
+    public ChinaBank(String bankCountry, Currency currency,int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        super(bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
 
     }
 
