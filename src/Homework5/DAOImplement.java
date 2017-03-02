@@ -6,14 +6,13 @@ package Homework5;
 public class DAOImplement implements DAO {
     @Override
     public Room save(Room room) {
+        System.out.println();
         System.out.println("save"+room.toString());
         return null;
     }
 
     @Override
     public boolean delete(Room room) {
-
-
         return false;
     }
 

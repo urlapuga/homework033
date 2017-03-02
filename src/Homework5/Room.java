@@ -14,8 +14,7 @@ public class Room {
     private String hotelName;
     private String cityName;
 
-    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
-        this.id = id;
+    public Room( int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.price = price;
         this.persons = persons;
         this.dateAvailableFrom = dateAvailableFrom;
