@@ -17,4 +17,10 @@ public class User {
         this.salary = salary;
         this.balance = balance;
     }
+
+    public boolean equals(User user) {
+        if (this.firstName == user.firstName &&this.lastName == user.lastName
+                && this.salary==user.salary && this.balance==user.balance)return true;
+        return false;
+    }
 }
