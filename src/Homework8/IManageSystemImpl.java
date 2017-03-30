@@ -1,8 +1,6 @@
 package Homework8;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Андрей on 30.03.2017.
@@ -12,32 +10,33 @@ public class IManageSystemImpl implements IManageSystem {
     private Map<Food, Double> database;
     @Override
     public Object save(Object obj, double price) {
-        return null;
+        database.put((Food)obj,price);
+        return database;
     }
 
     @Override
     public Object save(Object obj) {
-        return null;
+        return database;
     }
 
     @Override
     public void delete(Object obj) {
-
+        database.remove(obj);
     }
 
     @Override
     public void deleteById(int id) {
-
+        database.remove(id);
     }
 
     @Override
     public Object get(int id) {
-        return null;
+        return database.get(id);
     }
 
     @Override
     public Double getPrice(Object obj) {
-        return null;
+        return database.get(obj);
     }
 
     @Override
