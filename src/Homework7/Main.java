@@ -3,9 +3,7 @@ package Homework7;
 import java.math.BigDecimal;
 import java.util.*;
 
-/**
- * Created by Андрей on 23.03.2017.
- */
+
 public class Main {
     public static void main(String[] args) {
 
@@ -33,9 +31,15 @@ public class Main {
         orders.add(new Order(BigDecimal.valueOf(9),Currency.EUR,"name9","shopid1", users.get(9)));
         orders.add(new Order(BigDecimal.valueOf(0),Currency.EUR,"name0","shopid1", users.get(0)));
 
-
-
         orders.sort(Order::compareTo);
+        System.out.println(orders);
+
+        orders.sort(new OrderComparator());
+
+        System.out.println(orders);
+
+        orders.sort(new OrderComparatorTwo());
+
         System.out.println(orders);
     }
 }

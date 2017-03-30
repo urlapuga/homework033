@@ -1,8 +1,5 @@
 package Homework7;
 
-/**
- * Created by Андрей on 23.03.2017.
- */
 public class User {
     private long id;
     private String firstName;
@@ -16,5 +13,21 @@ public class User {
         this.lastName = lastName;
         this.city = city;
         this.balance = balance;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public int getBalance() {
+        return balance;
     }
 }

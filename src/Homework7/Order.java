@@ -2,9 +2,7 @@ package Homework7;
 
 import java.math.BigDecimal;
 
-/**
- * Created by Андрей on 23.03.2017.
- */
+
 class Order implements Comparable<Order> {
     private long id;
     private BigDecimal price;
@@ -12,6 +10,30 @@ class Order implements Comparable<Order> {
     private String itemName;
     private String shopIdentificator;
     private User user;
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public Currency getCurrency() {
+        return currency;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public String getShopIdentificator() {
+        return shopIdentificator;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getCity() {
+        return user.getCity();
+    }
 
     public Order(BigDecimal price, Currency currency, String itemName, String shopIdentificator, User user) {
         this.id = 1;
@@ -24,12 +46,12 @@ class Order implements Comparable<Order> {
 
     @Override
     public int compareTo(Order o) {
-        return -price.compareTo(o.price);
+        return -price.compareTo( o.price );
     }
+
     @Override
-    public String toString()
-    {
-        return this.price.toString() + " " + this.itemName;
+    public String toString() {
+        return this.price.toString() + " " + this.getCity() + " " + this.getShopIdentificator();
     }
 
 }
