@@ -16,7 +16,7 @@ package homework41;
  long rating
  long totalCapital
  */
-enum Currency{USD, EUR}
+
 
 
 abstract class Bank {

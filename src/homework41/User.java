@@ -71,6 +71,6 @@ public class User {
 
     @Override
     public String toString() {
-        return null;
+        return this.name + " balance : " +this.balance + " company: "+ this.companyName + " salary :" + this.salary + "bank :"+this.bank;
     }
 }
