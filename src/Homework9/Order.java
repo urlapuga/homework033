@@ -1,23 +1,22 @@
 package Homework9;
 
-import Homework7.Currency;
-
-import java.math.BigDecimal;
-
-
-class Order implements Comparable<Order> {
+class Order  {
     private long id;
-    private BigDecimal price;
-    private Currency currency;
+    private int price;
+    private Currencies currency;
     private String itemName;
     private String shopIdentificator;
     private User user;
 
-    public BigDecimal getPrice() {
+    public long getId() {
+        return id;
+    }
+
+    public int getPrice() {
         return price;
     }
 
-    public Currency getCurrency() {
+    public Currencies getCurrency() {
         return currency;
     }
 
@@ -33,11 +32,11 @@ class Order implements Comparable<Order> {
         return user;
     }
 
-    public String getCity() {
+    public Cities getCity() {
         return user.getCity();
     }
 
-    public Order(BigDecimal price, Currency currency, String itemName, String shopIdentificator, User user) {
+    public Order(int price, Currencies currency, String itemName, String shopIdentificator, User user) {
         this.id = 1;
         this.price = price;
         this.currency = currency;
@@ -47,13 +46,18 @@ class Order implements Comparable<Order> {
     }
 
     @Override
-    public int compareTo(Order o) {
-        return -price.compareTo( o.price );
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Order)) return false;
+
+        Order order = (Order) o;
+
+        return (id != order.id) ? false : (price != order.price) ? false : (!currency.equals(order.currency)) ? false : (!itemName.equals(order.itemName)) ? false : (!shopIdentificator.equals(order.shopIdentificator)) ? false : (!user.equals(order.user)) ? false : true;
     }
 
     @Override
     public String toString() {
-        return this.price.toString() + " " + this.getCity() + " " + this.getShopIdentificator();
+        return "price - " + this.price + " City - " + this.getCity() + " " + this.getId() + " " + this.getCurrency();
     }
 
 }
