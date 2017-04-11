@@ -1,7 +1,5 @@
 package homework41;
 
-import java.util.Arrays;
-
 /**
  * Created by Андрей on 22.02.2017.
  */
@@ -27,23 +25,17 @@ public class Main {
         users[5] = new User("userName5", 10000, 1, "company1", 10, chbank);
         users[6] = new User("userName6", 10000, 1, "company1", 10, chbank);
 
-        paySalaries();
-        System.exit(0);
-    }
-
-    void fundAll(int amount) {
         for (User user : users) {
-            bankSystem.fundUser(user, amount);
+            bankSystem.fundUser(user, 10);
             System.out.println(user.getBalance());
         }
-    }
 
-    static void paySalaries() {
-        Arrays.stream(users);
         for (User user : users) {
             bankSystem.paySalary(user);
             System.out.println(user.getBalance());
         }
+
+        System.exit(0);
     }
 
 }
