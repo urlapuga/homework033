@@ -5,33 +5,34 @@ package Homework6;
  */
 public class UserUtils {
 
-    static User[] uniqueUsers(User[] users) {
-        User[] unique = new User[users.length+1];
-        int k = 0;
-        for (int i = 0; i < users.length; i++) {
+    public static User[] uniqueUsers(User[] users) {
 
+        for (int i = 0; i < users.length; i++) {
             for (int j = i + 1; j < users.length; j++) {
-                System.out.println(j);
-                if (users[i].equals(users[j])) System.out.println("equal");
-                else if (j == users.length) {
-                    System.out.println(users[i].firstName + " " + users[i].lastName);
-                    unique[k] = users[i];
-                    k++;
+                if (users[i].equals(users[j])) {
+                    users = delete(users, j);
                 }
             }
-
         }
-        return unique;
+        return users;
+    }
 
+    ;
+
+    public static User[] delete(User[] users, int i) {
+        User[] deleted = new User[users.length - 1];
+        System.arraycopy(users, 0, deleted, 0, i);
+        System.arraycopy(users, i + 1, deleted, i, users.length - i - 1);
+        return deleted;
     }
 
     ;
 
     static User[] usersWithConditionalBalance(User[] users, int balance) {
-        User[] usersCondBal = new User[0];
+        User[] usersCondBal = new User[users.length];
         int k = 0;
         for (User user : users) {
-            if (user.balance == balance) {
+            if (user.balance >= balance) {
                 usersCondBal[k] = user;
                 k++;
             }
@@ -63,8 +64,10 @@ public class UserUtils {
     ;
 
     static User[] deleteEmptyUsers(User[] users) {
-        for (User user : users) {
-            if (user.firstName.isEmpty() && user.lastName.isEmpty()) user = null;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] == null) {
+                users = delete(users, i);
+            }
         }
         return users;
     }

@@ -18,8 +18,13 @@ public class User {
         this.balance = balance;
     }
 
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + "balance " + this.balance;
+    }
+
     public boolean equals(User user) {
-        if (this.firstName == user.firstName &&this.lastName == user.lastName
+        if (this.firstName.equals(user.firstName) &&this.lastName.equals(user.lastName)
                 && this.salary==user.salary && this.balance==user.balance)return true;
         return false;
     }
