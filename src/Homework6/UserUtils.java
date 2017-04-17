@@ -32,7 +32,7 @@ public class UserUtils {
         User[] usersCondBal = new User[users.length];
         int k = 0;
         for (User user : users) {
-            if (user.balance >= balance) {
+            if (user.getBalance() >= balance) {
                 usersCondBal[k] = user;
                 k++;
             }
@@ -45,7 +45,7 @@ public class UserUtils {
 
     static final User[] paySalaryToUsers(User[] users) {
         for (User user : users) {
-            user.balance += user.salary;
+            user.setBalance(user.getBalance()+user.getSalary());
         }
         return users;
     }
@@ -55,7 +55,7 @@ public class UserUtils {
     static final long[] getUsersId(User[] users) {
         long ids[] = new long[users.length];
         for (int i = 0; i < users.length; i++) {
-            ids[i] = users[i].id;
+            ids[i] = users[i].getId();
 
         }
         return ids;
