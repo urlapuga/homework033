@@ -25,6 +25,17 @@ public class Main2 {
         }
     }
 
+    public static Order getMax() {
+        Order result = null;
+        Iterator<Order> iterator = orderSet.iterator();
+        BigDecimal price = BigDecimal.valueOf(0);
+        while(iterator.hasNext()) {
+            Order order = iterator.next();
+            if(price.compareTo( order.getPrice() )==1)result = order;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         List<User> users = new ArrayList<>();
@@ -52,6 +63,7 @@ public class Main2 {
 
         System.out.println(findBySurname("Petrov"));
         remove(Currency.USD);
-
+        System.out.println(getMax());
+        System.out.println(Collections.max(orderSet,new MaxComparator()));
     }
 }
