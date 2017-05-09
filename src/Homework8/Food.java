@@ -1,13 +1,13 @@
 package Homework8;
 
 /**
- Создайте класс Food со следующими полями:
- id (уникальный идентификатор товара)
- name (наименование товара)
- country (страна производитель)
- expiration (срок годности в днях)
- Реализуйте доступ к полям. Идентификатор id должен быть недоступен для изменения и генерироваться с помощью IdGenerator при создании товара.
- Товары считаются одинаковыми, если их id одинаковы. Переопределите методы hashCode и equals соответственно.
+ * Создайте класс Food со следующими полями:
+ * id (уникальный идентификатор товара)
+ * name (наименование товара)
+ * country (страна производитель)
+ * expiration (срок годности в днях)
+ * Реализуйте доступ к полям. Идентификатор id должен быть недоступен для изменения и генерироваться с помощью IdGenerator при создании товара.
+ * Товары считаются одинаковыми, если их id одинаковы. Переопределите методы hashCode и equals соответственно.
  */
 public class Food {
     private int id;
@@ -15,16 +15,20 @@ public class Food {
     private Country country;
     private int expiration;
 
-    public boolean equals(Food food){
-        if(this.id == food.id)return true;
-        return false;
-    }
-
     public Food(String name, Country country, int expiration) {
-        this.id = UtilClass.generateId(country,name);
+        this.id = UtilClass.generateId(country, name);
         this.name = name;
         this.country = country;
         this.expiration = expiration;
+    }
+
+    public boolean equals(Food food) {
+        if (this.id == food.id) return true;
+        return false;
+    }
+
+    public int Hashcode() {
+        return 31 + id * 31;
     }
 
     public String getName() {
