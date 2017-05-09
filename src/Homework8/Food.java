@@ -16,10 +16,17 @@ public class Food {
     private int expiration;
 
     public Food(String name, Country country, int expiration) {
-        this.id = UtilClass.generateId(country, name);
+      //  this.id = UtilClass.generateId(country, name);
+        this.id = UtilClass.generateId();
+
         this.name = name;
         this.country = country;
         this.expiration = expiration;
+    }
+
+    @Override
+    public String toString(){
+        return id +" " + name + " " + country + " " + expiration;
     }
 
     @Override
@@ -37,6 +44,10 @@ public class Food {
     @Override
     public int hashCode() {
         return 31 + id * 31;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {

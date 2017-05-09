@@ -7,18 +7,19 @@ import java.util.*;
  */
 public class IManageSystemImpl implements IManageSystem<Food> {
 
-    private Map<Food, Double> database;
+    private Map<Food, Double> database = new HashMap<Food, Double>();
 
 
     @Override
     public Food save(Food obj, double price) {
-        database.put(obj,price);
+        System.out.println(obj);
+        database.put(obj, price);
         return obj;
     }
 
     @Override
     public Food save(Food obj) {
-        database.put(obj,Double.valueOf(0));
+        database.put(obj, Double.valueOf(0));
         return obj;
     }
 
@@ -29,16 +30,13 @@ public class IManageSystemImpl implements IManageSystem<Food> {
 
     @Override
     public void deleteById(int id) {
-        database.forEach((k,v)->{
-            if(k.getId()==id)database.remove(k);
-        }
-        );
+        database.remove(get(id));
     }
 
     @Override
     public Food get(int id) {
         Set<Food> foods = database.keySet();
-        return (Food) foods.stream().filter(f->f.getId()==id);
+        return foods.stream().filter(f -> f.getId() == id).findFirst().get();
     }
 
     @Override
@@ -53,6 +51,7 @@ public class IManageSystemImpl implements IManageSystem<Food> {
 
     @Override
     public List<Double> getPrices() {
-        return (List<Double>) database.values();
+        List<Double> list = new ArrayList<>(database.values());
+        return list;
     }
 }

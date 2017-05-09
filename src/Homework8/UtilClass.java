@@ -5,8 +5,12 @@ package Homework8;
  */
 public final class UtilClass {
     static int i = 0;
-    public static int generateId(Country country,String name){
-        i++;
-        return country.toString().length()*country.toString().hashCode()+i;
+    public static int generateId(){
+        return ++i;
     }
+
+  //  public static int generateId(Country country,String name){
+  //      i++;
+   //     return country.toString().length()*country.toString().hashCode()+i;
+   // }
 }
