@@ -22,12 +22,20 @@ public class Food {
         this.expiration = expiration;
     }
 
-    public boolean equals(Food food) {
-        if (this.id == food.id) return true;
-        return false;
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof Food)) {
+            return false;
+        }
+
+        Food food = (Food) o;
+        return this.id == food.id;
     }
 
-    public int Hashcode() {
+    @Override
+    public int hashCode() {
         return 31 + id * 31;
     }
 
