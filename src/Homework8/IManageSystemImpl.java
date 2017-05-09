@@ -5,47 +5,54 @@ import java.util.*;
 /**
  * Created by Андрей on 30.03.2017.
  */
-public class IManageSystemImpl implements IManageSystem {
+public class IManageSystemImpl implements IManageSystem<Food> {
 
     private Map<Food, Double> database;
+
+
     @Override
-    public Object save(Object obj, double price) {
-        database.put((Food)obj,price);
-        return database;
+    public Food save(Food obj, double price) {
+        database.put(obj,price);
+        return obj;
     }
 
     @Override
-    public Object save(Object obj) {
-        return database;
+    public Food save(Food obj) {
+        database.put(obj,Double.valueOf(0));
+        return obj;
     }
 
     @Override
-    public void delete(Object obj) {
+    public void delete(Food obj) {
         database.remove(obj);
     }
 
     @Override
     public void deleteById(int id) {
-        database.remove(id);
+        database.forEach((k,v)->{
+            if(k.getId()==id)database.remove(k);
+        }
+        );
     }
 
     @Override
-    public Object get(int id) {
-        return database.get(id);
+    public Food get(int id) {
+        Set<Food> foods = database.keySet();
+        return (Food) foods.stream().filter(f->f.getId()==id);
     }
 
     @Override
-    public Double getPrice(Object obj) {
+    public Double getPrice(Food obj) {
         return database.get(obj);
     }
 
     @Override
-    public Set getProducts() {
-        return null;
+    public Set<Food> getProducts() {
+        return database.keySet();
     }
 
     @Override
     public List<Double> getPrices() {
-        return null;
+        return (List<Double>) database.values();
     }
 }
